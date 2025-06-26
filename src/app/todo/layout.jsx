@@ -25,9 +25,9 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div>
-         <button>abcde</button>
+         <button>you can add button abcde</button>
           <div>
-        <button>efghdi</button>
+     
           </div>
         </div>
 
