@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { UserProvider } from "./context/UserContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+          <UserProvider>
         <div>
           <Link href={"./todo"}>todo link</Link>
           <div>
@@ -34,6 +36,7 @@ export default function RootLayout({ children }) {
         </div>
 
         {children}
+        </UserProvider>
       </body>
     </html>
   );

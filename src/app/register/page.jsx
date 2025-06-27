@@ -1,10 +1,12 @@
 'use client'
+import {useRouter } from 'next/navigation'
 import React,{useState} from 'react'
-const apiURL='http://localhost:3000/api/signup'
+const apiURL='http://localhost:3000/api/auth/signup'
 export default function RegisterPage() {
   const [userName, setUsername]=useState('')
   const [email, setEmail]=useState('')
   const [password, setPassword]=useState('')
+  const router = useRouter()
   const handleSubmit=(e)=>{
   e.preventDefault()
   fetch(apiURL,{method:"POST",
@@ -12,6 +14,7 @@ export default function RegisterPage() {
     body:JSON.stringify({userName, email, password})
   }).then(res=>{return res.json()}).then(data=>console.log('data',data)).catch(error=>{console.log('error', error)})
   //  setNewUser({userName, email, password})
+  router.push('/login')
   }
   return (
     <div>

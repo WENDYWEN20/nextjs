@@ -2,7 +2,7 @@
 //get request
 import bcrypt from 'bcrypt'
 const saltRounds=10
-const usersData = [
+export const usersData = [
   { userName: "John", email: "john@gmail.com", password: "abc" },
   { userName: "Molly", email: "molly@gmail.com", password: "def" },
   { userName: "Emma", email: "emma@gmail.com", password: "ghi" },

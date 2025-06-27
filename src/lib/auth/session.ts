@@ -12,13 +12,13 @@ export const setLoginCookie=async(token: string)=>{
 }
 // when the server action/route handler finishes, next.js adds 
 // Set-Cookie: token=<jwt>; Path=/; Max-Age=604800; HttpOnly; Secure
-
+//cookies are key value pairs .set will overwrite the entire cookie
 export const getLoginToken=async()=>{
   const cookieStore=await cookies()
   return cookieStore.get(COOKIE_NAME)?.value||null
 }
 export const clearLoginCookie=async()=>{
   const cookieStore=await cookies()
-  return cookisStore.set(COOKIE_NAME, '', {maxAge:0, path:"/"})
+  return cookieStore.set(COOKIE_NAME, '', {maxAge:0, path:"/"})
 }
 //Setting maxAge: 0 (and an empty value) expires the cookie immediately – the standard way to delete it.
